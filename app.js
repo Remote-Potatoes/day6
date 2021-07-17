@@ -137,4 +137,44 @@ function roundto2Decimals(num) {
 }
 
 // logs the rounded WD cohort height average to the console
-console.log(roundto2Decimals(totalWDCohortHeightAverage));
+// console.log(roundto2Decimals(totalWDCohortHeightAverage));
+
+//? sort() & reverse() time!
+//! -> they mutate the array where they are being applied to!
+
+// console.log(normalizedStudentNames);
+
+//! sort() time!
+//? Sort the students by alphabetical order!
+
+const sortedAlphabetically = normalizedStudentNames.slice().sort((a, b) => {
+  return a.localeCompare(b);
+});
+
+// console.log(sortedAlphabetically);
+
+//! reverse() time!
+//? Reverse the order Alphabetically
+
+const sortedAlphReversed = sortedAlphabetically.slice().reverse();
+
+// console.log(sortedAlphReversed);
+
+//? forEach() time!
+// -> It's also an array method
+// -> It loops through each item in the array
+// and executes a piece of logic you type!
+// -> ALWAYS returns undefined - useful when the returned value
+// is irrelevant to us
+
+//? Problem: We want the students names capitalized!
+
+const capitalizedNames = [];
+
+normalizedStudentNames.forEach((student) => {
+  const capitalizedName = student[0].toUpperCase() + student.slice(1);
+
+  capitalizedNames.push(capitalizedName);
+});
+
+console.log(capitalizedNames);
